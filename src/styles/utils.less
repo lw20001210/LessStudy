@@ -1,0 +1,43 @@
+.medium-500(@size, @color: #000000) {
+  color: @color;
+  font-weight: 500;
+  font-size: @size; /* no */
+  line-height: @size; /* no */
+}
+
+.semibold-600(@size, @color) {
+  color: @color;
+  font-weight: 600;
+  font-size: @size; /* no */
+  line-height: @size; /* no */
+}
+
+// 文本超出显示省略号
+.ellipsis-mixin(@line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  & when (@line = 1) {
+    white-space: nowrap;
+  }
+
+  & when (@line > 1) {
+    /* stylelint-disable */
+    display: -webkit-box !important;
+    -webkit-line-clamp: @line;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.regular-400(@size, @color: @text-color) {
+  margin: 0;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  font-size: @size; /* no */
+  font-weight: 400;
+  line-height: @size; /* no */
+  color: @color;
+}
+
+.bordered {
+  border-left: 1px solid red;
+}
